@@ -32,4 +32,19 @@ for user in cleaned_users:
         seen_user.add(key)
         unique_users.append(user)
 
-print(unique_users)
+missing_age_count = 0
+city_count = {}
+
+for user in unique_users:
+    if user["age"] is None:
+        missing_age_count += 1
+
+    city = user["city"]
+    
+    if city in city_count:
+        city_count[city] = city_count[city] + 1
+    else:
+        city_count[city] = 1
+print("Total Users:",len(unique_users))
+print("Users with missing age",missing_age_count)
+print("Users in city",city_count)
