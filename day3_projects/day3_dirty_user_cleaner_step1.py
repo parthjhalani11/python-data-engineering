@@ -21,4 +21,15 @@ for user in raw_users:
         age = int(raw_age.strip())
     user_dict = {'name' : raw_name, 'age' : age, 'city' : raw_city}
     cleaned_users.append(user_dict)
-print(cleaned_users)
+
+seen_user = set()
+unique_users = []
+
+for user in cleaned_users:
+    key = (user['name'], user['age'], user['city'])
+    
+    if key not in seen_user:
+        seen_user.add(key)
+        unique_users.append(user)
+
+print(unique_users)
