@@ -5,24 +5,30 @@
 This repository contains a series of Python practice exercises and a mini end-to-end data cleaning project.  
 It is designed to help learn Python basics and core data engineering concepts such as text parsing, data cleaning, deduplication, and basic pipeline structuring.
 
+---
+
 ## Folder Structure
 
-- **day1_strings/** – Practice on string manipulation in Python.
-- **day1_numbers/** – Practice on numeric operations and data types.
-- **day2_lists_sets_tuples/** – Practice on containers: lists, sets, tuples.
-- **day2_dictionaries/** – Practice on key-value data using dictionaries.
-- **day3_projects/** – Contains the data cleaning project and its refactored functions.
+- **day1_strings/** – Practice on string manipulation in Python  
+- **day1_numbers/** – Practice on numeric operations and data types  
+- **day2_lists_sets_tuples/** – Practice on containers: lists, sets, tuples  
+- **day2_dictionaries/** – Practice on key-value data using dictionaries  
+- **day3_projects/** – Contains the data cleaning project and its refactored functions  
+
+---
 
 ## Mini Project: Dirty User Data Cleaner
 
 This project demonstrates a simple pipeline to:
 
-1. Take raw user description strings
-2. Clean them into structured dictionaries
-3. Remove duplicate users
-4. Provide deduplicated output of users
+1. Take raw user description strings  
+2. Clean them into structured dictionaries  
+3. Remove duplicate users  
+4. Provide deduplicated output  
 
-### Example
+---
+
+## Example
 
 ```python
 raw_users = [
@@ -33,37 +39,5 @@ raw_users = [
 
 cleaned_users = [clean_user(u) for u in raw_users]
 unique_users = deduplicate_users(cleaned_users)
+
 print(unique_users)
-Expected output:
-
-[
- {'name': 'Parth', 'age': 20, 'city': 'Delhi'},
- {'name': 'Rahul', 'age': 21, 'city': 'Mumbai'},
-]
-```
-How to Use
-
-Clone the repository
-
-Navigate to the appropriate folder
-
-Run Python files using:
-
-python <filename>.py
-
-
-E.g.:
-
-python day3_projects/day4_dirty_user_cleaner_functions.py
-
-Future Work
-
-Extend project to read data from a CSV file
-
-Add summary and reporting functions
-
-Write tests for functions
-
-License
-
-This project is open-source and free to use.
