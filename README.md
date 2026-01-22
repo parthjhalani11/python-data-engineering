@@ -41,3 +41,37 @@ cleaned_users = [clean_user(u) for u in raw_users]
 unique_users = deduplicate_users(cleaned_users)
 
 print(unique_users)
+```
+### Expected Output
+```python
+[
+    {'name': 'Parth', 'age': 20, 'city': 'Delhi'},
+    {'name': 'Rahul', 'age': 21, 'city': 'Mumbai'}
+]
+```
+## How to Use
+
+Clone the repository
+
+Navigate to the appropriate folder
+
+Run Python files using:
+
+python <filename>.py
+
+
+Example:
+
+python day3_projects/day4_dirty_user_cleaner_functions.py
+
+## Future Work
+
+Extend project to read data from a CSV file
+
+Add summary and reporting functions
+
+Write tests for functions
+
+## License
+
+This project is open-source and free to use.
