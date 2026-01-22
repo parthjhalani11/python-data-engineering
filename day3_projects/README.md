@@ -1,7 +1,13 @@
-Mini Project: Dirty User Data Cleaner
+# Dirty User Data Cleaner
 
-- Cleaned raw user strings
-- Normalized casing & types
-- Removed duplicate users
-- Handled missing values
-- Generated summary metrics
+This mini project cleans raw user strings into structured data.
+
+## Features
+- String parsing and normalization
+- Missing value handling
+- Deduplication using composite keys
+- Refactored into reusable functions
+
+## Files
+- day3_dirty_user_cleaner.py – initial script version
+- day4_dirty_user_cleaner_functions.py – refactored function-based version
