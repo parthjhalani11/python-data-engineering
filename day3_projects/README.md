@@ -11,3 +11,4 @@ This mini project cleans raw user strings into structured data.
 ## Files
 - day3_dirty_user_cleaner.py – initial script version
 - day4_dirty_user_cleaner_functions.py – refactored function-based version
+- day5_dirty_user_cleaner_pipeline.py – final pipeline with validation and readable output
