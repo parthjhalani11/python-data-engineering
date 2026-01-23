@@ -3,7 +3,7 @@
 ## Project Overview
 
 This repository contains a series of Python practice exercises and a mini end-to-end data cleaning project.  
-It is designed to help learn Python basics and core data engineering concepts such as text parsing, data cleaning, deduplication, and basic pipeline structuring.
+It is designed to learn Python fundamentals and core data engineering concepts such as text parsing, data cleaning, deduplication, defensive coding, and basic pipeline structuring.
 
 ---
 
@@ -13,65 +13,86 @@ It is designed to help learn Python basics and core data engineering concepts su
 - **day1_numbers/** – Practice on numeric operations and data types  
 - **day2_lists_sets_tuples/** – Practice on containers: lists, sets, tuples  
 - **day2_dictionaries/** – Practice on key-value data using dictionaries  
-- **day3_projects/** – Contains the data cleaning project and its refactored functions  
+
+- **day3_projects/** – Dirty User Data Cleaner project (step-by-step evolution):
+  - `day3_dirty_user_cleaner.py` – Initial script version
+  - `day4_dirty_user_cleaner_functions.py` – Refactored using reusable functions
+  - `day5_dirty_user_cleaner_pipeline.py` – Final pipeline with validation, main flow, and clean output
 
 ---
 
 ## Mini Project: Dirty User Data Cleaner
 
-This project demonstrates a simple pipeline to:
+This mini project demonstrates how raw, inconsistent user data can be transformed into clean, structured, and deduplicated data using Python.
 
-1. Take raw user description strings  
-2. Clean them into structured dictionaries  
-3. Remove duplicate users  
-4. Provide deduplicated output  
+### Pipeline Overview
+
+1. Accept raw user strings  
+2. Clean and normalize data (name, age, city)  
+3. Handle missing or invalid values safely  
+4. Remove duplicate users  
+5. Display clean, human-readable output  
 
 ---
 
-## Example
+## Day 5 Enhancements
+
+On Day 5, the project was improved with real-world engineering practices:
+
+- Introduced a `main()` function to control program flow  
+- Added defensive coding to safely handle invalid or incomplete input  
+- Ensured functions return predictable outputs (`dict` or `None`)  
+- Implemented clean, human-readable output formatting  
+- Used execution guard `if __name__ == "__main__"`  
+
+These changes make the script more robust and closer to real data engineering pipelines.
+
+---
+
+## Example (Day 5 Pipeline)
+
+### Input
 
 ```python
 raw_users = [
     "  Parth | 20 | delhi  ",
     "rahul|21|Mumbai",
     "parth | 20 | Delhi ",
-]
-
-cleaned_users = [clean_user(u) for u in raw_users]
-unique_users = deduplicate_users(cleaned_users)
-
-print(unique_users)
-```
-### Expected Output
-```python
-[
-    {'name': 'Parth', 'age': 20, 'city': 'Delhi'},
-    {'name': 'Rahul', 'age': 21, 'city': 'Mumbai'}
+    "Nikita| |Pune"
 ]
 ```
-## How to Use
+Output
+
+Total unique users: 3
+
+Name: Parth  | Age: 20  | City: Delhi
+Name: Rahul  | Age: 21  | City: Mumbai
+Name: Nikita | Age: N/A | City: Pune
+How to Use
 
 Clone the repository
 
-Navigate to the appropriate folder
+Navigate to the desired folder
 
-Run Python files using:
+Run any Python file using:
 
 python <filename>.py
 
 
 Example:
 
-python day3_projects/day4_dirty_user_cleaner_functions.py
+python day3_projects/day5_dirty_user_cleaner_pipeline.py
 
-## Future Work
+Future Work
 
-Extend project to read data from a CSV file
+Read raw data from CSV or JSON files
 
-Add summary and reporting functions
+Add summary statistics (counts per city, missing values, etc.)
 
-Write tests for functions
+Write unit tests for data cleaning functions
 
-## License
+Extend pipeline using Pandas
+
+License
 
 This project is open-source and free to use.
